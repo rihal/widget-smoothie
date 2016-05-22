@@ -34,7 +34,7 @@ requirejs.config({
     }
 });
 
-cprequire_test(["inline:com-chilipeppr-widget-template"], function(myWidget) {
+cprequire_test(["inline:com-chilipeppr-widget-Smoothie"], function(myWidget) {
 
     // Test this element. This code is auto-removed by the chilipeppr.load()
     // when using this widget in production. So use the cpquire_test to do things
@@ -74,13 +74,13 @@ cprequire_test(["inline:com-chilipeppr-widget-template"], function(myWidget) {
 } /*end_test*/ );
 
 // This is the main definition of your widget. Give it a unique name.
-cpdefine("inline:com-chilipeppr-widget-template", ["chilipeppr_ready", /* other dependencies here */ ], function() {
+cpdefine("inline:com-chilipeppr-widget-Smoothie", ["chilipeppr_ready", /* other dependencies here */ ], function() {
     return {
         /**
          * The ID of the widget. You must define this and make it unique.
          */
-        id: "com-chilipeppr-widget-template", // Make the id the same as the cpdefine id
-        name: "Widget / Template", // The descriptive name of your widget.
+        id: "com-chilipeppr-widget-Smoothie", // Make the id the same as the cpdefine id
+        name: "Widget / Smoothieboard", // The descriptive name of your widget.
         desc: "This widget shows smoothie specific controls and current status information.", // A description of what your widget does
         url: "(auto fill by runme.js)",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
         fiddleurl: "(auto fill by runme.js)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
@@ -163,7 +163,7 @@ cpdefine("inline:com-chilipeppr-widget-template", ["chilipeppr_ready", /* other 
         init: function() {
             this.uiHover(); //set up the data elements for all UI
             
-            this.setupUiFromCookie();
+            this.setupUiFromLocalStorage();
             this.btnSetup();
 
             this.forkSetup();
@@ -283,7 +283,7 @@ cpdefine("inline:com-chilipeppr-widget-template", ["chilipeppr_ready", /* other 
                 chilipeppr.publish('/com-chilipeppr-interface-cnccontroller/plannerresume', "");
             });
 
-            $('#com-chilipeppr-widget-Smoothie-btnoptions').click(this.showConfigModal.bind(this));
+            //$('#com-chilipeppr-widget-Smoothie-btnoptions').click(this.showConfigModal.bind(this));
             
             $('#com-chilipeppr-widget-Smoothie .btn-toolbar .btn').popover({
                 delay: 500,
