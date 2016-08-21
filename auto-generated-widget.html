@@ -242,12 +242,12 @@ cpdefine("inline:com-chilipeppr-widget-Smoothie", ["chilipeppr_ready", /* other 
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/recvSingleSelectPort", this, function(port){
                 if(port !== null){
                    this.buffer_name = port.BufferAlgorithm;
-                    if(this.buffer_name !== "Smoothie"){
+                    /*if(this.buffer_name !== "Smoothie")*/{
                        $("#Smoothie-buffer-warning").show();
                     }
-                    else{
+                    /*else{
                        $("#Smoothie-buffer-warning").hide();
-                    }
+                    }*/
                 }
             });
             
