@@ -194,7 +194,7 @@ cpdefine("inline:com-chilipeppr-widget-Smoothie", ["chilipeppr_ready", /* other 
         config: [],
         err_log: [],
         //config_index: [],
-        buffer_name: "",
+        buffer_name: "smoothie",
         report_mode: 0,
         work_mode: 0,
         controller_units: null,
@@ -242,12 +242,12 @@ cpdefine("inline:com-chilipeppr-widget-Smoothie", ["chilipeppr_ready", /* other 
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/recvSingleSelectPort", this, function(port){
                 if(port !== null){
                    this.buffer_name = port.BufferAlgorithm;
-                    /*if(this.buffer_name !== "Smoothie")*/{
+                    if(this.buffer_name !== "Smoothie")
                        $("#Smoothie-buffer-warning").show();
                     }
-                    /*else{
+                    else{
                        $("#Smoothie-buffer-warning").hide();
-                    }*/
+                    }
                 }
             });
             
@@ -393,7 +393,7 @@ cpdefine("inline:com-chilipeppr-widget-Smoothie", ["chilipeppr_ready", /* other 
             $('#Smoothie-status-info-div').hide();
             clearInterval(this.g_status_reports);
             this.config = [];
-            this.buffer_name = "";
+            this.buffer_name = "smoothie";
             this.report_mode = 0;
             this.work_mode = 0;
             this.status = "Offline";
